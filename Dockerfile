@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y sudo less mysql-client
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
+RUN echo "source /home/$USER/wp-completion.bash" >> ~/.bashrc 
+RUN source ~/.bashrc
 
 # Cleanup
 RUN apt-get clean
